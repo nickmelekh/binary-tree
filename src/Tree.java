@@ -86,4 +86,21 @@ public class Tree {
             }
         }
     }
+
+    public Node findByValue(double value) {
+        Node curNode = rootNode;
+        while (curNode.getValue() != value) {
+            if (value < curNode.getValue()) {
+                curNode = curNode.getLeftChild();
+            }
+            else {
+                curNode = curNode.getRightChild();
+            }
+
+            if (curNode == null) {
+                return null;
+            }
+        }
+        return curNode;
+    }
 }
