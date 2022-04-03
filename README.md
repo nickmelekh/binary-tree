@@ -1,1 +1,1 @@
-Run App.java
+Run src/App.java
