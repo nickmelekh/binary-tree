@@ -7,7 +7,7 @@ public class App {
             tree.insertNode(array[i]);
         }
         tree.printTree();
-        
-        System.out.println(tree.findByValue(50.0));
+
+        System.out.println(tree.getParentNode(tree.findByValue(1.0)).getValue());
     }
 }

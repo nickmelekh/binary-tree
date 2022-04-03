@@ -5,9 +5,9 @@ public class Tree {
     private Node rootNode;
     private int nodeNumber;
 
-    public Tree(int value) {
+    public Tree(int size) {
         rootNode = null;
-        nodeNumber = value;
+        nodeNumber = size;
     }
 
     public void insertNode(double value) {
@@ -102,5 +102,22 @@ public class Tree {
             }
         }
         return curNode;
+    }
+
+    public Node getParentNode(Node childNode) {
+        Node curNode = rootNode;
+        Node parentNode = curNode;
+
+        while (curNode != childNode) {
+            parentNode = curNode;
+            if (curNode.getLeftChild() != null) {
+                if (childNode.getValue() < curNode.getValue()) {
+                    curNode = curNode.getLeftChild();
+                } else {
+                    curNode = curNode.getRightChild();
+                }
+            }
+        }
+        return parentNode;
     }
 }
